@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "862510322387",
+    "firebase_url": "https://gymgo-560c1.firebaseio.com",
+    "project_id": "gymgo-560c1",
+    "storage_bucket": "gymgo-560c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862510322387:android:ce09523eff25c13405fa26",
+        "android_client_info": {
+          "package_name": "com.pixelmindit.gymgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862510322387-sltaq7l4t9q4hghsab0ps428e18h0irj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbkmvbBn5AU0EoRD2xxfJx7PuNJfuT7HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862510322387-sltaq7l4t9q4hghsab0ps428e18h0irj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
