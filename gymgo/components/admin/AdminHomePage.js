@@ -664,7 +664,7 @@ export default class AdminHomePage extends React.Component {
                         </View>
 
                         {/* <View style={{ width: w / 1.2, justifyContent: 'flex-end', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto', marginTop: width / 30 }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('AdminPackageDetails')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('AdminPackageDetails')}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontWeight: 'bold', fontSize: width / 35, color: '#1976d2', transform: transform(), textAlign: textAlign() }}>{i18n.t('viewReport')}</Text>
                                     <Image style={{ width: width / 18, height: width / 18, marginLeft: width / 30, transform: transform() }} source={report} />
@@ -712,7 +712,7 @@ export default class AdminHomePage extends React.Component {
                             </View>
                         </View>
                         {/* <View style={{ width: w / 1.2, justifyContent: 'flex-end', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto', marginTop: width / 30 }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('AdminBranchSales')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('AdminBranchSales')}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontWeight: 'bold', fontSize: width / 35, color: '#1976d2', transform: transform(), textAlign: textAlign() }}>{i18n.t('viewReport')}</Text>
                                     <Image style={{ width: width / 18, height: width / 18, marginLeft: width / 30, transform: transform() }} source={report} />
@@ -767,7 +767,7 @@ export default class AdminHomePage extends React.Component {
                             </View>
                         </View>
                         {/* <View style={{ width: w / 1.2, justifyContent: 'flex-end', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto', marginTop: width / 30 }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('AdminRevenueDetails')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('AdminRevenueDetails')}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontWeight: 'bold', fontSize: width / 35, color: '#1976d2', transform: transform(), textAlign: textAlign() }}>{i18n.t('viewReport')}</Text>
                                     <Image style={{ width: width / 18, height: width / 18, marginLeft: width / 30, transform: transform() }} source={report} />
@@ -807,7 +807,7 @@ export default class AdminHomePage extends React.Component {
                             </View>
                         </View>
                         {/* <View style={{ width: w / 1.2, justifyContent: 'flex-end', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto', marginTop: width / 30 }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('AdminMemberAttendance')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('AdminMemberAttendance')}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontWeight: 'bold', fontSize: width / 35, color: '#1976d2', transform: transform(), textAlign: textAlign() }}>{i18n.t('viewReport')}</Text>
                                     <Image style={{ width: width / 18, height: width / 18, marginLeft: width / 30, transform: transform() }} source={report} />
@@ -852,7 +852,7 @@ export default class AdminHomePage extends React.Component {
                         })}
 
                         {/* <View style={{ width: w / 1.2, justifyContent: 'flex-end', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto', marginTop: width / 30 }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('AdminMostSellingProduct')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('AdminMostSellingProduct')}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontWeight: 'bold', fontSize: width / 35, color: '#1976d2', transform: transform(), textAlign: textAlign() }}>{i18n.t('viewReport')}</Text>
                                     <Image style={{ width: width / 18, height: width / 18, marginLeft: width / 30, transform: transform() }} source={report} />

@@ -327,12 +327,12 @@ export default class TrainerHome extends React.Component {
                                     </TouchableOpacity>
                                 )
                             }) : <View style={{ height: width / 0.7, width: w / 1.1, justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', flexDirection: 'row', }}>
-                                    <View style={{ marginTop: width / 2.5 }}>
-                                        <Image source={notifyBell} style={{ width: width / 5, height: width / 5, marginLeft: 'auto', marginRight: 'auto', }} />
-                                        <Text style={{ textAlign: 'center', fontSize: width / 24, color: '#333', fontWeight: 'bold', marginTop: width / 50 }}>{i18n.t('noNotify')}</Text>
-                                        <Text style={{ textAlign: 'center', fontSize: width / 28, color: '#333', marginTop: width / 50 }}>{i18n.t('notify')}</Text>
-                                    </View>
-                                </View>}
+                                <View style={{ marginTop: width / 2.5 }}>
+                                    <Image source={notifyBell} style={{ width: width / 5, height: width / 5, marginLeft: 'auto', marginRight: 'auto', }} />
+                                    <Text style={{ textAlign: 'center', fontSize: width / 24, color: '#333', fontWeight: 'bold', marginTop: width / 50 }}>{i18n.t('noNotify')}</Text>
+                                    <Text style={{ textAlign: 'center', fontSize: width / 28, color: '#333', marginTop: width / 50 }}>{i18n.t('notify')}</Text>
+                                </View>
+                            </View>}
                         </ScrollView>
                         {this.state.notification.length > 0 ? <TouchableOpacity onPress={() => this.clearNotifications()}>
                             <View style={{ padding: width / 50, width: w / 3, backgroundColor: '#00c853', marginLeft: 'auto', marginRight: 'auto', borderRadius: 5, marginTop: width / 40 }}>

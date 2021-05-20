@@ -249,10 +249,10 @@ class ItemDetails extends Component {
                         </TouchableOpacity>
                     </View> : <View style={{ marginTop: width / 20, marginLeft: 'auto', marginRight: 'auto', }}>
 
-                            <View style={{ backgroundColor: '#ffccbc', width: width / 1.4, height: width / 8, borderRadius: 30 }}>
-                                <Text style={{ textAlign: 'center', fontSize: width / 18, color: 'white', marginBottom: 'auto', marginTop: 'auto', transform: transform() }}>{i18n.t('addedToCart')}</Text>
-                            </View>
-                        </View>}
+                        <View style={{ backgroundColor: '#ffccbc', width: width / 1.4, height: width / 8, borderRadius: 30 }}>
+                            <Text style={{ textAlign: 'center', fontSize: width / 18, color: 'white', marginBottom: 'auto', marginTop: 'auto', transform: transform() }}>{i18n.t('addedToCart')}</Text>
+                        </View>
+                    </View>}
 
 
                 </ScrollView>

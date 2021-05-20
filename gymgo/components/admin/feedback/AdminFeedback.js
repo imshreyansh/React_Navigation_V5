@@ -328,7 +328,7 @@ class AdminFeedback extends Component {
                         var startTime = shours + ':' + `${("0" + sminutes).slice(-2)}` + ' ' + sampm
                         return (
 
-                            <TouchableOpacity key={i} onPress={() => this.props.navigation.navigate('AdminFeedbackDetails', { id: d._id, statusBox: d.adminComment ? false : true })}>
+                            <TouchableOpacity key={i} onPress={() => this.props.navigation.push('AdminFeedbackDetails', { id: d._id, statusBox: d.adminComment ? false : true })}>
                                 <View elevation={1} style={{ marginTop: width / 30, marginLeft: 'auto', marginRight: 'auto', width: w / 1.08, borderWidth: 1, borderColor: '#ddd', borderRadius: 3, paddingBottom: width / 30, backgroundColor: 'white' }}>
                                     <View style={{ width: w / 1.1, flexDirection: 'row', justifyContent: 'space-between' }}>
                                         <View style={{ flexDirection: 'row' }}>
@@ -401,7 +401,7 @@ class AdminFeedback extends Component {
                     </View>
                 </Modal>
                 <View elevation={10} style={styles.fab}>
-                    <TouchableOpacity style={{ transform: [{ rotateY: this.state.isRTL ? '180deg' : '0deg' }], width: width / 7.5, height: width / 7.5, flexDirection: 'column', alignItems: 'center' }} onPress={() => this.props.navigation.navigate('AdminAddFeedback')}>
+                    <TouchableOpacity style={{ transform: [{ rotateY: this.state.isRTL ? '180deg' : '0deg' }], width: width / 7.5, height: width / 7.5, flexDirection: 'column', alignItems: 'center' }} onPress={() => this.props.navigation.push('AdminAddFeedback')}>
                         <Text style={styles.fabIcon}>+</Text>
                     </TouchableOpacity>
                 </View>

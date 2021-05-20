@@ -67,7 +67,7 @@ export default class AdminDrawerMenuBar extends React.Component {
     onPressLogout = () => {
 
         AsyncStorage.clear().then(() => {
-            this.props.navigation.navigate('AuthLoadingScreen')
+            this.props.navigation.push('AuthLoadingScreen')
         })
 
 
@@ -79,7 +79,7 @@ export default class AdminDrawerMenuBar extends React.Component {
         if (id === 1) {
             this.props.navigation.closeDrawer()
         } else if (id === 2) {
-            // this.props.navigation.navigate('EditProfile')
+            // this.props.navigation.push('EditProfile')
 
 
         } else if (id === 3) {
@@ -87,15 +87,15 @@ export default class AdminDrawerMenuBar extends React.Component {
             // this.props.navigation.closeDrawer()
 
         } else if (id === 4) {
-            // this.props.navigation.navigate('ContactHome')
+            // this.props.navigation.push('ContactHome')
 
         } else if (id === 5) {
-            this.props.navigation.navigate('About')
+            this.props.navigation.push('About')
         } else if (id === 6) {
-            this.props.navigation.navigate('Settings')
+            this.props.navigation.push('Settings')
 
         } else if (id === 7) {
-            this.props.navigation.navigate('AdminFeedback')
+            this.props.navigation.push('AdminFeedback')
 
         }
     }

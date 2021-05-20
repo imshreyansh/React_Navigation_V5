@@ -115,7 +115,7 @@ class TrainerInvoice extends Component {
 
     navigateByInstallment = (data) => {
         this.setModalVisible(false)
-        this.props.navigation.navigate('InvoiceDetails', { orderDetails: data, packageDetails: this.state.selectedOrder, type: 'trainer', branch: this.state.branchData })
+        this.props.navigation.push('InvoiceDetails', { orderDetails: data, packageDetails: this.state.selectedOrder, type: 'trainer', branch: this.state.branchData })
     }
 
     render() {

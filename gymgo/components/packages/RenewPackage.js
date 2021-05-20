@@ -174,9 +174,9 @@ export default class RenewPackage extends React.Component {
                                                 <Text style={{ fontSize: width / 28, color: 'white', textAlign: 'center' }}>{i18n.t('inActive')}</Text>
 
                                             </View> : <View style={{ paddingBottom: width / 80, paddingTop: width / 80, width: w / 5, backgroundColor: '#8bc34a', borderRadius: 5 }}>
-                                                <Text style={{ fontSize: width / 28, color: 'white', textAlign: 'center' }}>{i18n.t('active')}</Text>
+                                            <Text style={{ fontSize: width / 28, color: 'white', textAlign: 'center' }}>{i18n.t('active')}</Text>
 
-                                            </View>}
+                                        </View>}
                                     </View>
                                     <View style={{ marginTop: width / 50, marginLeft: width / 30 }}>
                                         <Text numberOfLines={1} style={{ fontSize: width / 18, color: 'white', width: w / 1.5, fontWeight: 'bold', }}>{data.packages.packageName}</Text>
@@ -184,10 +184,10 @@ export default class RenewPackage extends React.Component {
                                     {data.endDate ? new Date(data.extendDate ? data.extendDate : data.endDate).setHours(0, 0, 0, 0) >= new Date().setHours(0, 0, 0, 0) ? <View style={{ marginTop: width / 50, marginLeft: width / 30 }}>
                                         <Text numberOfLines={2} style={{ fontSize: width / 28, color: 'white', width: w / 1.5, }}>{i18n.t('yourCurrentPlanSubscriptionIsActiveThrough')} {months} {dates} {year}</Text>
                                     </View> : <View style={{ marginTop: width / 50, marginLeft: width / 30 }}>
-                                            <Text numberOfLines={2} style={{ fontSize: width / 28, color: 'white', width: w / 1.5, }}>{i18n.t('yourPreviousPlanSubscriptionWasActiveThrough')} {months} {dates} {year}</Text>
-                                        </View> : <View style={{ marginTop: width / 50, marginLeft: width / 30 }}>
-                                            <Text numberOfLines={2} style={{ fontSize: width / 28, color: 'white', width: w / 1.5, }}>{i18n.t('yourCurrentPlanSubscriptionIsActiveThrough')} {months} {dates} {year}</Text>
-                                        </View>}
+                                        <Text numberOfLines={2} style={{ fontSize: width / 28, color: 'white', width: w / 1.5, }}>{i18n.t('yourPreviousPlanSubscriptionWasActiveThrough')} {months} {dates} {year}</Text>
+                                    </View> : <View style={{ marginTop: width / 50, marginLeft: width / 30 }}>
+                                        <Text numberOfLines={2} style={{ fontSize: width / 28, color: 'white', width: w / 1.5, }}>{i18n.t('yourCurrentPlanSubscriptionIsActiveThrough')} {months} {dates} {year}</Text>
+                                    </View>}
 
                                     {this.renderRenewButton(data.extendDate ? data.extendDate : data.endDate, data.packages._id, data._id, data.packageRenewal)}
                                 </ImageBackground>

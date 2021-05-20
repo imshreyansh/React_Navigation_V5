@@ -8,6 +8,7 @@ import { SafeAreaView, StatusBar } from 'react-native';
 import FlashMessage from "react-native-flash-message"
 import { Navigators } from './components/navigator/Navigators'
 import { Navigator } from './components/navigator/NewNavigator'
+import AuthLoadingScreen from './components/common/AuthLoadingScreen'
 import { ar } from './utils/ar';
 import { en } from './utils/en';
 import axios from 'axios';
