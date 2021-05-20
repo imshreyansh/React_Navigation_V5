@@ -44,8 +44,6 @@ export default class AuthLoadingScreen extends React.Component {
                 loading: false
             })
         }, 5000)
-
-        this.callNav()
     }
 
 
