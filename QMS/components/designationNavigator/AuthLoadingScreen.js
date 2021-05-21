@@ -22,10 +22,7 @@ import Settings from '../menu/Settings'
 
 
 export default class AuthLoadingScreen extends React.Component {
-    constructor() {
-        super()
-        this.callNav()
-    }
+
     state = {
         loading: true,
         savedDesignation: '',
@@ -39,16 +36,27 @@ export default class AuthLoadingScreen extends React.Component {
 
     componentDidMount() {
         this._isMounted = true
-        setTimeout(() => {
-            this.setState({
-                loading: false
-            })
-        }, 5000)
+        if (this._isMounted) {
+            this.callNav()
+
+            setTimeout(() => {
+                this.setState({
+                    loading: false
+                })
+            }, 5000)
+        }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false
+
     }
 
 
+
     callNav = async () => {
-        const { role } = this.props.route !== undefined ? this.props.route.params : ''
+
+        const { role } = this.props !== undefined ? this.props.route.params : ''
         this.setState({
             role
         })

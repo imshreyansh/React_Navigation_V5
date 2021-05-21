@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView, ImageBackground } from 'react-native'
 import Svg, { Ellipse, Defs, ClipPath, Image as SvgImage, Path } from 'react-native-svg'
 import { h, w, width, height, Icon, transform, textAlign } from '../../utils/resources/helpers'
+import { connect } from 'react-redux'
 import design from '../../assets/images/design.png'
 import pixel from '../../assets/images/pixel.png'
 import i18n from 'i18n-js'
+import { loginUser } from '../../actions/authorization'
 
 class Login extends Component {
     state = {
@@ -25,8 +27,17 @@ class Login extends Component {
 
     }
 
+    onLogin = () => {
+        const obj = {
+            name: 'Shreyansh Upadhyay',
+            id: 123
+        }
+        this.props.dispatch(loginUser(obj))
+        this.props.navigation.push('AuthLoadingScreen', { role: 'Member' })
+
+    }
+
     render() {
-        console.log(w)
         return (
 
             // {`M100.36,-200.17 C${w * 2.5},173.19 80.23,50.34 -16.08,500.95 L-37.52,211.67 L0.00,0.00 Z`}
@@ -141,7 +152,7 @@ class Login extends Component {
                                     <Text style={{ fontSize: width / 24, color: '#333', fontWeight: 'bold', transform: transform(), }}>{i18n.t('forgotPassword')} ?</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.push('AuthLoadingScreen', { role: 'Member' })}>
+                            <TouchableOpacity onPress={() => this.onLogin()}>
                                 <View style={{ width: w / 1.2, backgroundColor: 'orange', paddingBottom: width / 50, marginTop: width / 25, marginLeft: 'auto', marginRight: 'auto', borderRadius: width / 12 }}>
                                     <Text style={{ fontSize: width / 18, color: 'white', fontWeight: 'bold', textAlign: 'center', marginTop: width / 40, transform: transform(), }}>{i18n.t('login')}</Text>
                                 </View>
@@ -171,4 +182,11 @@ class Login extends Component {
     }
 }
 
-export default Login
+function mapStateToProps(authed) {
+    console.log(authed, 'kjbkjbkj')
+    return {
+        user: authed
+    }
+}
+
+export default connect(mapStateToProps)(Login)
