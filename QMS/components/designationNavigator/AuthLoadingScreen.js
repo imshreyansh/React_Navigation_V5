@@ -160,7 +160,7 @@ const UserDrawerNavigatorEnglish = () => {
 
 const UserDrawerNavigatorArabic = () => {
     return (
-        <UserDrawerNavigator.Navigator drawerType={'slide'} drawerPosition={'right'} drawerContent={() => <DrawerMenuBar />} drawerStyle={{
+        <UserDrawerNavigator.Navigator drawerType={'slide'} drawerPosition={'right'} drawerContent={(navigation) => <DrawerMenuBar navigation={navigation.navigation} />} drawerStyle={{
             width: w / 1.3,
         }}>
             <UserDrawerNavigator.Screen name="UserStack" component={UserStack} />
