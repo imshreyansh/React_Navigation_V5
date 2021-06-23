@@ -10,6 +10,8 @@ import { height, Icon, width, w, h } from '../../utils/resources/helpers';
 import i18n from 'i18n-js'
 import Login from '../authorization/Login'
 import SignUp from '../authorization/SignUp'
+import SignUpTwo from '../authorization/SignUpTwo'
+import SignUpThree from '../authorization/SignUpThree'
 import ForgotPassword from '../authorization/ForgotPassword'
 import MobileLogin from '../authorization/MobileLogin'
 import UserProfile from '../profile/UserProfile'
@@ -19,7 +21,6 @@ import MyTickets from '../dashboard/MyTickets'
 import Notifications from '../dashboard/Notifications'
 import DrawerMenuBar from '../menu/DrawerMenuBar'
 import Settings from '../menu/Settings'
-
 
 export default class AuthLoadingScreen extends React.Component {
 
@@ -38,12 +39,11 @@ export default class AuthLoadingScreen extends React.Component {
         this._isMounted = true
         if (this._isMounted) {
             this.callNav()
-
-            setTimeout(() => {
-                this.setState({
-                    loading: false
-                })
-            }, 5000)
+            // setTimeout(() => {
+            //     this.setState({
+            //         loading: false
+            //     })
+            // }, 5000)
         }
     }
 
@@ -55,7 +55,9 @@ export default class AuthLoadingScreen extends React.Component {
 
 
     callNav = async () => {
-
+        this.setState({
+            loading: false
+        })
         const { role } = this.props !== undefined ? this.props.route.params : ''
         this.setState({
             role
@@ -71,13 +73,16 @@ export default class AuthLoadingScreen extends React.Component {
                 {role === '' || role === 'Auth' ?
                     <RootStack.Navigator>
                         <RootStack.Screen name="AuthStack" component={AuthStack} options={{ headerShown: false }} />
-                    </RootStack.Navigator> : role === 'Member' ?
+                    </RootStack.Navigator> : role === 'Member' && i18n.locale === 'ar' ?
                         <RootStack.Navigator>
-                            <RootStack.Screen name="UserDrawerNavigatorEnglish" component={UserDrawerNavigatorEnglish} options={{ headerShown: false }} />
-                        </RootStack.Navigator> :
-                        <RootStack.Navigator>
-                            <RootStack.Screen name="AuthStack" component={AuthStack} options={{ headerShown: false }} />
-                        </RootStack.Navigator>}
+                            <RootStack.Screen name="UserDrawerNavigatorArabic" component={UserDrawerNavigatorArabic} options={{ headerShown: false }} />
+                        </RootStack.Navigator> : role === 'Member' && i18n.locale === 'en' ?
+                            <RootStack.Navigator>
+                                <RootStack.Screen name="UserDrawerNavigatorEnglish" component={UserDrawerNavigatorEnglish} options={{ headerShown: false }} />
+                            </RootStack.Navigator> :
+                            <RootStack.Navigator>
+                                <RootStack.Screen name="AuthStack" component={AuthStack} options={{ headerShown: false }} />
+                            </RootStack.Navigator>}
             </View>
         )
     }
@@ -93,6 +98,8 @@ const AuthStack = () => {
         <AuthStackNavigator.Navigator>
             <AuthStackNavigator.Screen name="Login" component={Login} options={{ headerShown: false }} />
             <AuthStackNavigator.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
+            <AuthStackNavigator.Screen name="SignUpTwo" component={SignUpTwo} options={{ headerShown: false }} />
+            <AuthStackNavigator.Screen name="SignUpThree" component={SignUpThree} options={{ headerShown: false }} />
             <AuthStackNavigator.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} />
             <AuthStackNavigator.Screen name="MobileLogin" component={MobileLogin} options={{ headerShown: false }} />
         </AuthStackNavigator.Navigator>
@@ -107,13 +114,13 @@ const UserTab = () => {
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
                 if (route.name === 'Home') {
-                    iconName = 'home'
+                    iconName = 'fi-rr-home'
                 } else if (route.name === 'Favourites') {
-                    iconName = 'bmi-tracker'
+                    iconName = 'fi-rr-heart'
                 } else if (route.name === 'MyTickets') {
-                    iconName = 'water-intake'
+                    iconName = 'fi-rr-ticket'
                 } else if (route.name === 'Notifications') {
-                    iconName = 'water-intake'
+                    iconName = 'fi-rr-bell-ring'
                 }
                 return <Icon name={iconName} size={25} color={color} />;
             },
@@ -134,6 +141,7 @@ const UserStack = () => {
         <UserStackNavigator.Navigator>
             <UserStackNavigator.Screen name="UserTab" component={UserTab} options={{ headerShown: false }} />
             <UserStackNavigator.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
+            <UserStackNavigator.Screen name="UserProfile" component={UserProfile} options={{ headerShown: false }} />
         </UserStackNavigator.Navigator>
     )
 }
@@ -142,7 +150,9 @@ const UserDrawerNavigator = createDrawerNavigator();
 
 const UserDrawerNavigatorEnglish = () => {
     return (
-        <UserDrawerNavigator.Navigator drawerType={'slide'} drawerPosition={'left'} drawerContent={() => <DrawerMenuBar />}>
+        <UserDrawerNavigator.Navigator drawerType={'slide'} drawerPosition={'left'} drawerContent={(navigation) => <DrawerMenuBar navigation={navigation.navigation} />} drawerStyle={{
+            width: w / 1.3,
+        }}>
             <UserDrawerNavigator.Screen name="UserStack" component={UserStack} />
         </UserDrawerNavigator.Navigator>
     )
@@ -150,7 +160,9 @@ const UserDrawerNavigatorEnglish = () => {
 
 const UserDrawerNavigatorArabic = () => {
     return (
-        <UserDrawerNavigator.Navigator drawerType={'slide'} drawerPosition={'right'}>
+        <UserDrawerNavigator.Navigator drawerType={'slide'} drawerPosition={'right'} drawerContent={() => <DrawerMenuBar />} drawerStyle={{
+            width: w / 1.3,
+        }}>
             <UserDrawerNavigator.Screen name="UserStack" component={UserStack} />
         </UserDrawerNavigator.Navigator>
     )
